@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import viewsets, filters
 from .models import User, Blog
-from .serializer import UserSerializer, BlogSerializer
+from .serializers import UserSerializer, BlogSerializer
 
 
 class SampleAPIView(APIView):
