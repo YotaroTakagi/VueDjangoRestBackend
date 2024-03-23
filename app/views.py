@@ -3,8 +3,8 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import viewsets, filters
-from .models import User, Blog
-from .serializers import UserSerializer, BlogSerializer
+from .models import Blog
+from .serializers import BlogSerializer
 
 
 class SampleAPIView(APIView):
@@ -12,10 +12,6 @@ class SampleAPIView(APIView):
         
         return Response('Hello Django!!!')
 
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
 
 class BlogViewSet(viewsets.ModelViewSet):
