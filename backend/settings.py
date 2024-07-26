@@ -25,7 +25,13 @@ SECRET_KEY = "django-insecure-k1%4z+6r(i(erefb$&7sev1zb9knsa8$#!xawrx*1(1poaw(8a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tkg.pythonanywhere.com', 'work-as-life.com', '127.0.0.1']
+ALLOWED_HOSTS = [
+    "tkg.pythonanywhere.com",
+    "work-as-life.com",
+    "127.0.0.1",
+    "localhost",
+    "localhost:8000",
+]
 
 
 # Application definition
@@ -37,10 +43,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'rest_framework',
-    'app',
+    "rest_framework",
+    "app",
     "corsheaders",
 ]
+
+
+AUTH_USER_MODEL = "app.CustomUsers"
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -54,9 +63,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:5173',
-    'http://127.0.0.1:5173',
-    'https://work-as-life.com'
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://work-as-life.com",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -98,18 +107,24 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ja"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Tokyo"
 
 USE_I18N = True
 

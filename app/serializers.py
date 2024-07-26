@@ -1,11 +1,16 @@
 # coding: utf-8
 
 from rest_framework import serializers
+from .models import CustomUsers, BlogContents
 
-from .models import Blog
 
-
-class BlogSerializer(serializers.ModelSerializer):
+class CustomUsersSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Blog
-        fields = ('title', 'tag', 'body', 'created_at', 'status')
+        model = CustomUsers
+        fields = "__all__"
+
+
+class BlogContentsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BlogContents
+        fields = "__all__"
