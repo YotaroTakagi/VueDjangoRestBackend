@@ -1,6 +1,7 @@
 # coding: utf-8
 
 from rest_framework import serializers
+from django.core.validators import RegexValidator
 from .models import CustomUsers, BlogContents
 
 
