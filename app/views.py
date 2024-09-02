@@ -22,6 +22,11 @@ class BlogViewSet(viewsets.ModelViewSet):
     serializer_class = BlogContentsSerializer
 
 
+class PickupBlogViewSet(viewsets.ModelViewSet):
+    queryset = BlogContents.objects.filter(status="public").order_by("-created_at")[:5]
+    serializer_class = BlogContentsSerializer
+
+
 class LoginAPIView(APIView):
     def post(self, request):
         request_data = request.data
